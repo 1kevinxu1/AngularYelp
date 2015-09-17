@@ -1,15 +1,8 @@
 <html ng-app="angularYelp">
   <head>
     <title>My Angular App!</title>
-
-    <% if Rails.env.production? %>
-      <% api_key = "key=AIzaSyAUlWnCojcgJydvyv_WjLkZl7PvoySJei4" %>
-    <% else %>
-      <% api_key = '' %>
-    <% end %>
-
     <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?<%= api_key %>"></script>
+            src="https://maps.googleapis.com/maps/api/js?AIzaSyAUlWnCojcgJydvyv_WjLkZl7PvoySJei4"></script>
 
 <!-- javascript include tag -->
   </head>
