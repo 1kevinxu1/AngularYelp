@@ -10,8 +10,9 @@ app.controller('SearchController', function($scope, $http, test){
   $scope.businesses = [];
 
   $scope.search = function(){
+    debugger;
     $http({
-      url: '/search',
+      url: window.location.href + '/search',
       method: "POST",
       data: {
         location: $scope.searchParams.location,
