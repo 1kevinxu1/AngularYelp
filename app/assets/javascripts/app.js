@@ -16,10 +16,10 @@ app.controller('SearchController', ['$scope', '$http', function($scope, $http){
     .then(function(response) {
       $scope.businesses = response.data;
       $scope.resetBusinesses();
-      // console.log(response.data);
       $scope.searchParams = {};
     },
     function(response) { // optional
+      debugger;
       alert("Something's gone wrong");
     });
   };
