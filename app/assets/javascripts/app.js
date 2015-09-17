@@ -1,6 +1,6 @@
 var app = angular.module('angularYelp', []);
 
-app.controller('SearchController', function($scope, $http){
+app.controller('SearchController', ['$scope', '$http', function($scope, $http){
   $scope.searchParams = {};
   $scope.businesses = [];
 
@@ -28,9 +28,9 @@ app.controller('SearchController', function($scope, $http){
    $scope.$broadcast("newSearch", {businesses: $scope.businesses });
   };
 
-});
+}]);
 
-app.controller('MapController', function($scope) {
+app.controller('MapController', ['$scope', function($scope) {
   // debugger;
   $scope.markers = [];
   $scope.mapCanvas = document.getElementById('map');
@@ -75,4 +75,4 @@ app.controller('MapController', function($scope) {
     };
     $scope.map.fitBounds(bounds);
   }
-});
+}]);
