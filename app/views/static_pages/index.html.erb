@@ -1,0 +1,44 @@
+<html ng-app="angularYelp">
+  <head>
+    <title>My Angular App!</title>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="app.js"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+  </head>
+
+  <div class="row backdrop">
+    <body class="col-xs-6 col-xs-offset-3" ng-controller="SearchController as searchCtrl">
+      <h3>Search for Businesses near a location!</h3>
+      <form class="" ng-submit="search()">
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" required>
+        <label for="#location">Location</label>
+        <input id="location" ng-model="searchParams.location" placeholder="San Francisco" required>
+        <label for="#topic">Topic</label>
+        <input id="topic" ng-model="searchParams.topic" placeholder="Restauraunts" required>
+        <input class="btn btn-primary" type="submit" name="name" value="Search">
+      </form>
+      <div id="map" ng-controller="MapController as mapCtrl"></div>
+      <div class="">
+        <ul class="list-unstyled">
+          <li class="clearfix index-item" ng-repeat="business in businesses">
+            <img class="clearfix" ng-src="{{business.hash.image_url}}"></img>
+            <div class="name">
+              {{business.hash.name}}
+            </div>
+            <div class=>
+              {{business.hash.display_phone}}
+            </div>
+            <ul>
+              {{business.hash.location.display_address[0]}}
+              {{business.hash.location.display_address[1]}}
+              {{business.hash.location.display_address[2]}}
+            </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </body>
+  </div>
+
+</html>
