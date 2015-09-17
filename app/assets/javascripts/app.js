@@ -1,16 +1,10 @@
 var app = angular.module('angularYelp', []);
 
-app.service("test", function(){
-  this.test = "TEST";
-})
-
-app.controller('SearchController', function($scope, $http, test){
+app.controller('SearchController', function($scope, $http){
   $scope.searchParams = {};
-  $scope.test = test.test;
   $scope.businesses = [];
 
   $scope.search = function(){
-    debugger;
     $http({
       url: window.location.href + '/search',
       method: "POST",
